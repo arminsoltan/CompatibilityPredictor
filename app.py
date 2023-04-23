@@ -40,6 +40,7 @@ class Compatibility(Resource):
     
     @staticmethod
     def calculate_similarity_applicant_member(applicant_att_vec, member_att_vec):
+        print(applicant_att_vec, member_att_vec)
         return np.dot(applicant_att_vec, member_att_vec) / (np.linalg.norm(applicant_att_vec) * np.linalg.norm(member_att_vec))
     
 api.add_resource(Compatibility, "/compatibility")
