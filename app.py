@@ -22,7 +22,7 @@ class Compatibility(Resource):
             applicant_score = 0
             for member in team_members:
                 member_att_vec = self.get_attributes_vector(member["attributes"])
-                applicant_score += self.calculate_similarity_applicant_member(applicant_att_vec, member_att_vec)        
+                applicant_score += self.calculate_similarity_applicant_with_team_member(applicant_att_vec, member_att_vec)        
             applicant_score = applicant_score / len(team_members)
             result["scoredApplicants"].append({
                 "name": applicant["name"],
@@ -39,7 +39,7 @@ class Compatibility(Resource):
         return np.array([intelligence, strength, endurance, spicyFoodTolerance])
     
     @staticmethod
-    def calculate_similarity_applicant_member(applicant_att_vec, member_att_vec):
+    def calculate_similarity_applicant_with_team_member(applicant_att_vec, member_att_vec):
         return np.dot(applicant_att_vec, member_att_vec) / (np.linalg.norm(applicant_att_vec) * np.linalg.norm(member_att_vec))
     
 api.add_resource(Compatibility, "/compatibility")
