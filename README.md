@@ -5,6 +5,7 @@ In this Project I implemented Compatibility of applicants to current team member
 To run this project we need virtual environment for our program. To create virtual environment, you only need run following command.
 >> virtualenv venv
 
+To activate your environment run below command.
 >> source venv/bin/activate
 
 To install all required packages you can run following command on your system
@@ -12,3 +13,5 @@ To install all required packages you can run following command on your system
 
 To run the program you need to run flask app.
 >> python app.py
+
+To see an example for the input format you can see inputFormat text file in this repository.
